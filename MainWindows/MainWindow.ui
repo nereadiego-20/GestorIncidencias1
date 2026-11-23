@@ -1,0 +1,349 @@
+<?xml version="1.0" ?>
+<ui version="4.0">
+  <class>VentanaPrincipal</class>
+  <widget class="QMainWindow" name="VentanaPrincipal">
+    <property name="windowTitle">
+      <string>Gestor de incidencias</string>
+    </property>
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1100</width>
+        <height>700</height>
+      </rect>
+    </property>
+    <property name="styleSheet">
+      <string>QWidget { font-family: Arial; font-size: 13px; color: #25324a; } QMainWindow, QWidget#centralwidget {background:#f4f7fc;} QFrame#panelLista, QFrame#panelDetalle {background:white;border:1px solid #dce5f4;border-radius:7px;} QLabel[role="encabezado"] {background:#c9daf8;padding:8px;font-weight:bold;} QLabel[role="titulo"] {font-size:18px;font-weight:bold;} QLabel[role="valor"] {background:white;padding:7px;} QPushButton {background:#e9effa;padding:9px 12px;border:1px solid #cbd7ec;border-radius:4px;} QPushButton[role="navegacion"] {background:#0000ff;color:white;font-weight:bold;border:0;} QPushButton#btnEliminar {color:#b02c2c;} QListWidget {border:0;background:white;} QListWidget::item {padding:10px;border-bottom:1px solid #e8edf5;} QListWidget::item:selected {background:#c9daf8;color:#172747;}</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="layoutPrincipal">
+        <item>
+          <layout class="QHBoxLayout" name="barraSuperior">
+            <item>
+              <widget class="QPushButton" name="btnIncidencias">
+                <property name="text">
+                  <string>Incidencias</string>
+                </property>
+                <property name="role">
+                  <string>navegacion</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="btnNueva">
+                <property name="text">
+                  <string>Crear nueva incidencia</string>
+                </property>
+                <property name="role">
+                  <string>navegacion</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="btnFiltrar">
+                <property name="text">
+                  <string>Filtrar incidencias</string>
+                </property>
+                <property name="role">
+                  <string>navegacion</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </item>
+        <item>
+          <layout class="QHBoxLayout" name="cuerpo">
+            <item>
+              <widget class="QFrame" name="panelLista">
+                <layout class="QVBoxLayout" name="layoutLista">
+                  <item>
+                    <widget class="QLabel" name="tituloLista">
+                      <property name="text">
+                        <string>Bandeja de incidencias</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QListWidget" name="listaIncidencias">
+                      <property name="focusPolicy">
+                        <enum>NoFocus</enum>
+                      </property>
+                      <item>
+                        <property name="text">
+                          <string>Falta confirmación
+#001  ·  En curso  ·  Media  ·  20/10/2026</string>
+                        </property>
+                      </item>
+                      <item>
+                        <property name="text">
+                          <string>Sobrecalentamiento
+#002  ·  Por iniciar  ·  Alta  ·  20/10/2026</string>
+                        </property>
+                      </item>
+                      <item>
+                        <property name="text">
+                          <string>Caída de internet
+#003  ·  Finalizado  ·  Alta  ·  21/10/2026</string>
+                        </property>
+                      </item>
+                      <item>
+                        <property name="text">
+                          <string>Borrado accidental de archivos
+#004  ·  En curso  ·  Media  ·  22/10/2026</string>
+                        </property>
+                      </item>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="contador">
+                      <property name="text">
+                        <string>4 incidencia(s) encontrada(s)</string>
+                      </property>
+                    </widget>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+            <item>
+              <widget class="QFrame" name="panelDetalle">
+                <layout class="QVBoxLayout" name="layoutDetalle">
+                  <item>
+                    <layout class="QHBoxLayout" name="cabeceraDetalle">
+                      <item>
+                        <widget class="QLabel" name="tituloDetalle">
+                          <property name="text">
+                            <string>Detalle de la incidencia</string>
+                          </property>
+                          <property name="role">
+                            <string>titulo</string>
+                          </property>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QPushButton" name="btnEditar">
+                          <property name="text">
+                            <string>Editar</string>
+                          </property>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QPushButton" name="btnEliminar">
+                          <property name="text">
+                            <string>Eliminar</string>
+                          </property>
+                        </widget>
+                      </item>
+                    </layout>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="nombreEtiqueta">
+                      <property name="text">
+                        <string>Nombre de la incidencia</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="nombreValor">
+                      <property name="text">
+                        <string>Falta confirmación</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="idEtiqueta">
+                      <property name="text">
+                        <string>ID</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="idValor">
+                      <property name="text">
+                        <string>001</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="motivoEtiqueta">
+                      <property name="text">
+                        <string>Motivo de la incidencia</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="motivoValor">
+                      <property name="text">
+                        <string>No se ha recibido la confirmación necesaria para continuar con la solicitud.</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="estadoEtiqueta">
+                      <property name="text">
+                        <string>Estado</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="estadoValor">
+                      <property name="text">
+                        <string>En curso</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="prioridadEtiqueta">
+                      <property name="text">
+                        <string>Prioridad</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="prioridadValor">
+                      <property name="text">
+                        <string>Media</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="fechaEtiqueta">
+                      <property name="text">
+                        <string>Fecha</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="fechaValor">
+                      <property name="text">
+                        <string>20/10/2026</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="categoriaEtiqueta">
+                      <property name="text">
+                        <string>Categoría</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="categoriaValor">
+                      <property name="text">
+                        <string>Gestión</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="responsableEtiqueta">
+                      <property name="text">
+                        <string>Responsable</string>
+                      </property>
+                      <property name="role">
+                        <string>encabezado</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="responsableValor">
+                      <property name="text">
+                        <string>Equipo de soporte</string>
+                      </property>
+                      <property name="role">
+                        <string>valor</string>
+                      </property>
+                      <property name="wordWrap">
+                        <bool>true</bool>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <spacer name="espacioInferior">
+                      <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                        <size>
+                          <width>20</width>
+                          <height>40</height>
+                        </size>
+                      </property>
+                    </spacer>
+                  </item>
+                </layout>
+              </widget>
+            </item>
+          </layout>
+        </item>
+      </layout>
+    </widget>
+  </widget>
+  <resources/>
+  <connections/>
+</ui>
