@@ -1,0 +1,66 @@
+
+# README - Creación de incidencias con PySide6
+
+## Creación de la pantalla de nueva incidencia
+
+Para desarrollar la parte de creación de incidencias del gestor hemos utilizado **Qt Designer**, que viene con PySide6 y permite diseñar ventanas arrastrando componentes sin tener que programarlos directamente.
+
+### 1. Crear la ventana
+
+Primero abrimos Qt Designer y creamos una ventana de tipo `Main Window`.
+
+Le pusimos el título **Gestor de incidencias** y organizamos los elementos para que la interfaz fuera sencilla y fácil de utilizar.
+
+### 2. Crear los botones superiores
+
+En la parte superior añadimos un layout horizontal (`QHBoxLayout`) con tres botones (`QPushButton`):
+
+- Incidencias
+- Crear nueva Incidencia
+- Filtrar Incidencias
+
+Los colocamos uno al lado del otro y modificamos sus propiedades para darles un fondo azul y el texto blanco.
+
+### 3. Crear el formulario de incidencias
+
+En la página destinada a crear incidencias añadimos un formulario utilizando un `QGridLayout`.
+
+Colocamos los campos necesarios para introducir el nombre, el motivo, el estado, la prioridad, la fecha, la categoría y el responsable.
+
+Para ello utilizamos componentes como `QLabel`, `QLineEdit`, `QTextEdit`, `QComboBox` y `QDateEdit`.
+
+### 4. Añadir el botón para crear incidencias
+
+En la parte inferior del formulario añadimos un botón (`QPushButton`) con el texto **Crear Incidencia**.
+
+Este botón permite enviar los datos introducidos para crear una nueva incidencia.
+
+### 5. Dar estilo a la interfaz
+
+Modificamos la apariencia utilizando la propiedad `styleSheet` de Qt Designer.
+
+Utilizamos un fondo blanco, etiquetas de color azul claro y botones azules con texto blanco y bordes redondeados.
+
+### 6. Guardar el archivo .ui
+
+Cuando terminamos el diseño, guardamos la ventana en el archivo `prova.ui`.
+
+Después utilizamos PySide6 para generar el archivo Python `ui_kev_mainwindow.py`, que permite utilizar el diseño dentro de nuestra aplicación.
+
+### 7. Conectar la interfaz con Python
+
+Conectamos el formulario con el código Python mediante PySide6.
+
+También lo conectamos con `IncidentService`, que se encarga de gestionar los datos y crear las incidencias cuando pulsamos el botón correspondiente.
+
+### 8. Ejecutar la aplicación
+
+Una vez conectados los archivos, ejecutamos el proyecto desde VS Code utilizando Python.
+
+Al iniciar la aplicación se abre nuestra propia ventana del gestor de incidencias, mostrando el formulario que hemos diseñado en Qt Designer.
+
+## Resultado
+
+Al terminar tenemos una pantalla para crear nuevas incidencias, donde podemos introducir todos sus datos y guardarlos mediante el botón **Crear Incidencia**.
+
+La parte de creación es la que hemos conectado con el sistema de gestión, mientras que los botones de incidencias y filtros quedan pendientes de implementar.
